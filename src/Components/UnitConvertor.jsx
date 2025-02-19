@@ -14,7 +14,12 @@ function UnitConverter() {
   }, [value, changes,option]);
  
   function convertUnit(value, changes,option) {
+    debugger
     let conversionFactors = {}
+    if (option == changes) {
+      alert("Both unit are same select different unit")
+      return false
+    }
     switch (option) {
       case 'kg':
          conversionFactors = {
@@ -170,7 +175,6 @@ function UnitConverter() {
                 carat: value * 8.8596,
             };
             break;
-      
     }
 
     let result = conversionFactors[changes];
